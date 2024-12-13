@@ -1,6 +1,12 @@
 #include <iostream>
 
+#include <test.hpp>
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    Test a;
+
+    a.Act();
+
     return 0;
 }
