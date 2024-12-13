@@ -20,7 +20,7 @@ foreach (file ${src_files})
 endforeach ()
 
 foreach (folder ${third_party_src_dir})
-    file(GLOB srcs ${folder}/*.cpp)
+    file(GLOB srcs ${folder}/*.cpp ${folder}/*.c)
     list(APPEND third_party_src_files ${srcs})
 endforeach ()
 
@@ -32,7 +32,8 @@ endforeach ()
 
 add_executable(GL_demos main.cpp
     ${src_files}
-    ${third_party_src_files})
+    ${third_party_src_files}
+        src/tgl_window.hpp)
 
 target_link_libraries(${PROJECT_NAME}
         ${third_party_link_libs})
